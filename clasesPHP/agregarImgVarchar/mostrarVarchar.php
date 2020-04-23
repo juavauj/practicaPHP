@@ -6,6 +6,7 @@
     $resultado = mysqli_query($conexion, $sql);
 
     $resultado_varchar = mysqli_fetch_all($resultado);
+    @$id = $_GET['idImg'];
 ?>
 
 
@@ -27,10 +28,48 @@
 
     <?php foreach($resultado_varchar as $datoVar): ?>
         <div>
-            <?php echo $datoVar[1]; ?>
             <img src="<?php echo $datoVar[2]; ?> " />
+        </div>
+        <div>
+            <form method="POST" action="actualizarImg_Varchar.php" enctype="multipart/form-data">
+            <input type="text" value="<?php echo $datoVar[1] ?>" name="nombreNuevaImg"/>
+            <input type="file" name="nuevaImagen"/>
+            <input type="hidden" name="id" value="<?php echo $datoVar[0]; ?>">
+            <button type="submit">Actualizar</button>
+            </form>
+        </div>
+        <div>
+            <a href="eliminar.php?id=<?php echo $datoVar[0]; ?>">Eliminar</a>
         </div>
     <?php endforeach; ?>
 
 </body>
 </html>
+
+
+        <!-- Ejercicio a realizar
+        Desarollar la funcionalidad de actualizar Img (Blob o Varchar)
+
+        method="POST" -->
+
+
+<!-- 
+    if(isset($_POST['accion'])){
+        if($_POST['accion'] == 'insertar'){
+            logica para agregar el valor
+        } else if($_POST['update'] == 'actualizar'){
+            if(isset($_FILES['imagen']) && !empty($_FILES['imagen'])) {
+
+            }
+        }
+    }
+  -->
+<!-- Crear tabla de contactos
+    - Registrar un usuario
+        nombre, apellido, direccion, telefono, email
+    - Consultar y mostrar una tabla que muestre cada uno de los registros
+    - Actualizar los datos de un determinado registro
+    - Eliminar un registro
+    - Botón de busqueda de un usuario (ustedes definen el filtro)
+    
+-->
