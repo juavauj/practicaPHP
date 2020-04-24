@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro :: Clases PHP</title>
+</head>
+<body>  
+    <div id="registroForm">
+    <form method="POST" action="">
+    <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+    <br>
+    <input type="text" name="apellido" id="apellido" placeholder="Apellido">
+    <br>
+    <input type="text" name="correo" id="correo" placeholder="Correo">
+    <br>
+    <input type="password" name="contrasena" id="contrasena" placeholder="Contrasena">
+    <br>
+    <input type="submit" name="enter" value="Registrar">
+    </form>
+    </div>
+</body>
+</html>
