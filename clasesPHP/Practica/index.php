@@ -10,7 +10,7 @@
     <form method="POST" action="">
         <input type="text" name="correo" id="correo" placeholder="Email">
         <br>
-        <input type="password" name="contrasena" id="contrasena" placeholder="contraseña">
+        <input type="password" name="contrasena" id="contrasena" placeholder="Contraseña">
         <br>
         <input type="submit" value="Iniciar Sesión" name="Enter">
     </form>

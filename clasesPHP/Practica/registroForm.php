@@ -7,7 +7,7 @@
 </head>
 <body>  
     <div id="registroForm">
-    <form method="POST" action="">
+    <form method="POST" action="control/usuarioControl.php?accion=registrar">
     <input type="text" name="nombre" id="nombre" placeholder="Nombre">
     <br>
     <input type="text" name="apellido" id="apellido" placeholder="Apellido">

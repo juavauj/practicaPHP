@@ -1,0 +1,7 @@
+Patrón de diseño MVC
+	Modelo -> Es una plantilla o estructura de código que representa a las tablas de la BD
+	Vista -> Cada interfaz gráfica con la interactua el usuario donde está el resultado de la BD
+	Controlador -> Es el puente entre el modelo de la BD y la vista del cliente.
+			Se encarga de validar los datos que recibe del cliente y enviarles al modelo y recibir la data que la BD envía para 			pintarla en la vista
+
+En PHP el modelo cambia un poco, ya que es una clase que va a contener el constructor con las variables a inicializar y los métodos con los cuales el control se conectará para ejecutar las querys de la BD
