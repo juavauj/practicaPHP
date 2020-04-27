@@ -9,9 +9,15 @@ require(__DIR__ . '/../modelo/class.Usuario.php'); #requerimos el archivo de la 
 $accion = $_GET['accion'];
 
 switch($accion){
-    case 'registrar';
+    case 'registrar':
         insertar();
-break;
+    break;
+    case 'login':
+        login();
+    break;
+    case 'cerrar':
+        cerrarSesion();
+    break;
 }
 
 function insertar(){
@@ -25,6 +31,32 @@ function insertar(){
 
     $usuario->agregarUsuario($nom, $apellido, $email, $pass);
 
+}
+
+function login(){
+    $usuario = new Usuario();
+
+    $email = $_POST['correo'];
+    $pass = $_POST['contrasena'];
+
+    $result = $usuario->iniciarSesion($email, $pass);
+
+    if($result != 'error'){
+        // creamos una sesion para nuestro usuario con PHP
+        session_start(); #abrimos una sesión de usuario
+        $_SESSION['loggedin'] = true; #verdadero en el caso de existir datos de la sentencia sql para crear la sesión
+        $_SESSION['user'] = $result; #guardamos los datos de nuestro ususario logueado en un campo del array asociativo
+
+        header('Location: ../perfil.php'); #redirigimos a una nueva pestaña
+    } else {
+        // header('Location: ../index.php?res=usuario_inexistente');
+        echo 'Tus datos no son válidos';
+    }
+}
+
+function cerrarSesion(){
+    session_destroy(); #destruímos la sesión
+    header('Location: ../index.php');
 }
 
 ?>

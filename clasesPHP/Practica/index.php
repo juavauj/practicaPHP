@@ -7,12 +7,12 @@
 </head>
 <body>
     <div id="login">
-    <form method="POST" action="">
+    <form method="POST" action="control/usuarioControl.php?accion=login">
         <input type="text" name="correo" id="correo" placeholder="Email">
         <br>
         <input type="password" name="contrasena" id="contrasena" placeholder="Contraseña">
         <br>
-        <input type="submit" value="Iniciar Sesión" name="Enter">
+        <input type="submit" value="Iniciar Sesión" name="enter">
     </form>
     <br><br>
     </div>

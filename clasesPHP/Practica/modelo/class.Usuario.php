@@ -21,6 +21,25 @@ class Usuario{
         #$resultado = mysqli_query($conexion, $sql)
         $db->query($sql) ? header('Location: ../index.php?res=registrado') : header('Location: ../index.php?res=error'); #operador ternario
     }
+
+    // Crear el método de login de usuario de la clase usuario
+    public function iniciarSesion($email, $pass){
+        
+        $db = new Conexion();
+
+        $sql = "SELECT * FROM usuarios WHERE correo = '$email' AND contrasena = '$pass'";
+        
+        $result = $db->query($sql); #busqueda en basededatos de la varibale sql, sql es una sentencia.
+
+        // Preguntamos si la variable resultado es diferente a 0, es decir, si tiene un usuario que coincuda con la busqueda
+        if($result->num_rows > 0) {
+            $row = $result->fetch_assoc(); #busqueda asociada ['nombre'], ['correo'], ['constrasena']
+            return $row;
+        } else {
+            return 'error'; #devolvemos al control el mensaje de error
+        }
+    }
+
 }
 
 ?>
