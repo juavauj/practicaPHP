@@ -20,5 +20,18 @@ $_SESSION['user'];
     </span>
 
     <a href="control/usuarioControl.php?accion=cerrar">Cerrar Sesión</a>
+
+    <div id="registroProdFrom">
+        <form action="POST" action="control/productoControl.php?accionProd=registrarProd">
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre Producto" />
+            <br>
+            <input type="hidden" value="<?php echo $_SESSION['user']['id']; ?>" name="idUsuario">
+            <input type="submit" value="Registrar Producto" name="enter" />
+        </form>
+    </div>
+
+    <?php
+    include  __DIR__ .  '/control/productoControl.php';
+    ?>
 </body>
 </html>

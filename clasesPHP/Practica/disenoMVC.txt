@@ -5,3 +5,36 @@ Patrón de diseño MVC
 			Se encarga de validar los datos que recibe del cliente y enviarles al modelo y recibir la data que la BD envía para 			pintarla en la vista
 
 En PHP el modelo cambia un poco, ya que es una clase que va a contener el constructor con las variables a inicializar y los métodos con los cuales el control se conectará para ejecutar las querys de la BD
+
+
+
+Pasos a seguir:
+1) Definir la estructura de la Base de Datos:
+	cantidad de tablas
+	los datos de cada tabla
+	las relaciones necesarias entre las tablas
+
+2) Organizar nuestras carpetas de acuerdo al Patrón
+	MVC (Modelo Vista Controlador)
+	definimos los modelos
+		** existirá un modelo por cada tabla
+	definimos los controladores
+	definimos las vistas
+		** van de acuerdo a lo que se estipule con el cliente
+
+3) Iniciamos la construcción del modelo a usuario
+	** El modelo requiere la conexión a la BD
+	** Toda clase debe tener un constructor así éste se encuentre vacío o no
+	** Definir los métodos que necesitemos
+		definimos únicamente los nombre de los métodos necesarios, pero vamos desarrollandolos de forma individual
+
+	3.1) El contenido de un método
+		** instancia de la conexión
+		** La sentencia a ejecutar
+
+4) Dependiendo de las necesidades, podemos crear:
+	primero la vista requerido o el control
+	En el caso de una insercion, haremos primero la vista
+
+5) Crear las funciones del controlador
+	** El controlador al ser el puente entre la vista y la BD representada en el modelo debe requerir el archivo modelo
